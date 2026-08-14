@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Editor</title>
+</head>
+<body>
+    <h2>HTML Code</h2>
+    <textarea id="htmlCode" placeholder="Enter your HTML here...">
+<h1>Hello World</h1>
+<p>Edit the HTML to see changes!</p>
+    </textarea>
+    <iframe id="preview" srcdoc=""></iframe>
+    <a href='index.html'>go back</a>
+
+    <script>
+        const textarea = document.getElementById('htmlCode');
+        const iframe = document.getElementById('preview');
+
+        textarea.addEventListener('input', function() {
+            iframe.srcdoc = textarea.value;
+        });
+
+        iframe.srcdoc = textarea.value;
+    </script>
+</body>
+</html>
